@@ -1,0 +1,6 @@
+{
+    "project_name": "my_package",
+    "author": "Daniel Braun",
+    "pkg_name": "{{ cookiecutter.project_name|lower|replace('-', '_') }}",
+    "project_slug": "{{ cookiecutter.pkg_name|replace('_', '-') }}"
+}
