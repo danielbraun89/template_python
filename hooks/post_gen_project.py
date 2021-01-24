@@ -1,5 +1,1 @@
-print("""
-
-        Daniel Braun the King
-    
-""")
+print("""Daniel Braun the King""")

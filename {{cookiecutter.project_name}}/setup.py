@@ -2,7 +2,8 @@ from setuptools import setup, find_packages
 from pip._internal.req import parse_requirements
 
 ## blabla derived from: https://github.com/pypa/pip/issues/7645#issuecomment-578210649
-requirements = list(map(lambda ir: str(ir.req), parse_requirements('requirements.txt', session="blabla")))
+parsed_reqs = parse_requirements('requirements.txt', session="blabla")
+requirements = list(map(lambda ir: str(ir.req), parsed_reqs))
 
 setup(
     name='{{cookiecutter.project_slug}}',
@@ -14,9 +15,7 @@ setup(
 
     extras_require={
         # tests only requirements
-        'tests': [],
-        'dev': [
-            'bumpversion'
-        ]
+        'tests': ['pytest'],
+        'dev': ["mypy", "pytest", 'pylint', "twine", 'bumpversion']
     }
 )
